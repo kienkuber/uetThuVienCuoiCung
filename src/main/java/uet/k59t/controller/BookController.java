@@ -15,7 +15,9 @@ public class BookController {
 
     //Nhap sach moi
     @RequestMapping(value = "book", method = RequestMethod.POST)
-    public Book createBook(@RequestBody Book book){return bookService.createBook(book);}
+    public Book createBook(@RequestBody Book book){
+        System.out.println("Tthis is book method");
+        return bookService.createBook(book);}
 
     //
 
