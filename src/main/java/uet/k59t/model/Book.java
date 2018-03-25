@@ -10,11 +10,28 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String bookName;
-    private String descriptiong;
-    private int total;
-    private int numberLeft;
+    private String name;
+    private int quantity;
+    private String description;
     private boolean availability;
+    private String writer;
+    private String publisher;
+
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
 
     public Long getId() {
         return id;
@@ -24,36 +41,28 @@ public class Book {
         this.id = id;
     }
 
-    public String getBookName() {
-        return bookName;
+    public String getName() {
+        return name;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescriptiong() {
-        return descriptiong;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setDescriptiong(String descriptiong) {
-        this.descriptiong = descriptiong;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public int getTotal() {
-        return total;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
-    }
-
-    public int getNumberLeft() {
-        return numberLeft;
-    }
-
-    public void setNumberLeft(int numberLeft) {
-        this.numberLeft = numberLeft;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isAvailability() {

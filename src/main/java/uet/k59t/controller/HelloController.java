@@ -15,7 +15,7 @@ public class HelloController {
     @Autowired
     private HelloService helloService;
 
-    @RequestMapping(value = "hello/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello/{name}", method = RequestMethod.GET)
     public String upload(@PathVariable("name") String name){
         return helloService.sayHello(name);
     }
