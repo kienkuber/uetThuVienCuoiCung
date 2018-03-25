@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BookRepository extends CrudRepository<Book, Long> {
     Book findByName(String bookName);
-    List<BookDTOView> findAllBy();
+//    List<BookDTOView> findAllBy();
     Book findById(Long id);
 }

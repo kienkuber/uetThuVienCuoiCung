@@ -11,11 +11,13 @@ import java.util.List;
 @RestController
 public class BookController {
     @Autowired
-    public BookService bookService;
+    BookService bookService;
 
     //Create book
     @RequestMapping(value = "book/createbook", method = RequestMethod.POST)
-    public BookDTOCreate createBook(@RequestBody Book newBook){return bookService.createBook(newBook);}
+    public BookDTOCreate createBook(@RequestBody Book newBook){
+        return bookService.createBook(newBook);
+    }
 
     //Delete book
     @RequestMapping(value = "book/deletebook", method = RequestMethod.POST)
@@ -23,7 +25,9 @@ public class BookController {
 
     //View all books
     @RequestMapping(value = "book", method = RequestMethod.GET)
-    public List<BookDTOView> allBook() {return bookService.viewBook();}
+    public List<BookDTOView> allBook() {
+        return bookService.viewBook();
+    }
 
     //View a book
     @RequestMapping(value = "book/{bookId}", method = RequestMethod.GET)

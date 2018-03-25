@@ -6,6 +6,7 @@ import uet.k59t.controller.dto.*;
 import uet.k59t.model.Book;
 import uet.k59t.repository.BookRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -53,8 +54,19 @@ public class BookService {
 
     //xem danh sach sach
     public List<BookDTOView> viewBook(){
-        List<BookDTOView> list = bookRepository.findAllBy();
-        return list;
+        List<Book> listBookFromDB = (List<Book>) bookRepository.findAll();
+        List<BookDTOView> bookDTOViews = new ArrayList<>();
+        for (int i = 0; i < listBookFromDB.size(); i++) {
+            BookDTOView aBook = new BookDTOView();
+            aBook.setId(listBookFromDB.get(i).getId());
+            aBook.setName(listBookFromDB.get(i).getName());
+            aBook.setPublisher(listBookFromDB.get(i).getPublisher());
+            aBook.setQuantity(listBookFromDB.get(i).getQuantity());
+            aBook.setWriter(listBookFromDB.get(i).getWriter());
+
+            bookDTOViews.add(aBook);
+        }
+        return bookDTOViews;
     }
 
     //xem chi tiet sach
